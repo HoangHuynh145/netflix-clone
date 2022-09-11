@@ -21,7 +21,6 @@ import { useContext } from 'react'
 import { InputContext } from '../../context/InputContext'
 
 const Wellcome = () => {
-
     const inputText = useContext(InputContext)
     const { setInputValue } = inputText
 
@@ -37,7 +36,6 @@ const Wellcome = () => {
         allBtns[id].classList.toggle('rotate')
         allFaqs[id].classList.toggle('open')
     }
-
 
     return (
         <div className="story-container">

@@ -21,7 +21,7 @@
         }
 
         @include mobile {
-            margin: 2rem 5% 0 5%;
+            margin: 2rem 3% 0 3%;
         }
 
         .story-logo {
@@ -59,6 +59,10 @@
 
                 @include tablet {
                     margin-right: 1.5rem;
+                }
+
+                @include mobile {
+                    margin-right: .5rem;
                 }
 
                 &::before {

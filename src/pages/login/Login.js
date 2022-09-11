@@ -5,12 +5,11 @@ import './login.scss'
 import contactLoginData from '../../data/contactLoginData'
 import { useState, useEffect, useContext } from 'react'
 import { InputContext } from '../../context/InputContext';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate, Link } from 'react-router-dom'
 import { loginUser } from '../../features/apiRequest'
 
 const Login = () => {
-    // const validate = useSelector(state => state.auth.login)
     const values = useContext(InputContext)
     const { inputValue } = values
     const [isFocusEmail, setIsFocusEmail] = useState(false)

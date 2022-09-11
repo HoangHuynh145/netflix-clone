@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 
 const Model = ({ showModal }) => {
 
-
     useEffect(() => {
         const body = document.body
         body.classList.toggle('banner-open', showModal)

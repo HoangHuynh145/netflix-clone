@@ -38,7 +38,7 @@ const MainRoute = () => {
                     user ? <Latest title="Netflix" /> : NotFound
                 } />
                 <Route path='admin/allUser' element={user ? <GetAllUser /> : <NotFound />} />
-                <Route path="*" exact={true} element={<NotFound />}/>
+                <Route path="*" exact={true} element={<NotFound />} />
             </Routes>
         </ScrollToTop>
     )
