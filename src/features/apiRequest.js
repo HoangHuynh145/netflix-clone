@@ -25,7 +25,7 @@ const registerUser = async (user, dispatch, navigate) => {
         dispatch(registerSuccess())
         navigate('/login')
     } catch (error) {
-        console.log('Lỗi register', error)
+        console.log('Lỗi register')
         dispatch(registerFailed())
     }
 }
@@ -40,7 +40,7 @@ const loginUser = async (user, dispatch, navigate, setErorrMessage) => {
         dispatch(loginSuccess(res.data))
         navigate('/home')
     } catch (error) {
-        console.log('Lỗi login', error)
+        console.log('Lỗi login')
         dispatch(loginFailed())
         setErorrMessage({
             state: true,
@@ -79,10 +79,9 @@ const getAllUser = async(dispatch, accessToken, id, page, limit) => {
 
 const findUser = async(typeError, setTypeError, user) => {
     try {
-        const res = await axios.post(`${apiUrl}/user/find-user`, user)
-        console.log(res)
+        await axios.post(`${apiUrl}/user/find-user`, user)
     } catch (error) {
-        console.log('lỗi find user', error)
+        console.log('lỗi find user')
         if(error.response.data.user){
             setTypeError({
                 ...typeError,
@@ -110,7 +109,7 @@ const getMovie = async (setMovie, url) => {
             Math.floor(Math.random() * (res.data.results.length - 1))
         ])
     } catch (error) {
-        console.log('Error in line 53 apiRequest', error)
+        console.log('Error in line 53 apiRequest')
     }
 }
 
@@ -119,12 +118,9 @@ const getMovieDetail = async (movieDetailApi, setTrailerUrlDelay) => {
     try {
         const res = await BaseMovieUrl.get(movieDetailApi)
         const trailerindex = res.data.videos.results.findIndex(video => video.type === 'Trailer')
-        console.log("API: ", movieDetailApi)
-        console.log(res.data.videos.results)
-        console.log(trailerindex)
         setTrailerUrlDelay(res.data.videos.results[trailerindex])
     } catch (error) {
-        console.log('Error in line 63 apiRequest', error)
+        console.log('Error in line 63 apiRequest')
     }
 }
 
@@ -144,7 +140,7 @@ const getMovieForModal = async (movieDetailApi, setMovie, type) => {
             genres: res.data.genres
         })
     } catch (error) {
-        console.log('Error in line 84 apiRequest', error)
+        console.log('Error in line 84 apiRequest')
     }
 }
 
@@ -155,7 +151,7 @@ const getMovieForRecommendation = async (setRecommend, movieApi) => {
         const res = await BaseMovieUrl.get(`${movieApi}&page=${page}`)
         setRecommend(res.data.results)
     } catch (error) {
-        console.log('Error in line 93 apiRequest', error)
+        console.log('Error in line 93 apiRequest')
     }
 }
 
@@ -167,7 +163,7 @@ const getEpisodesForRecommend = async (setEpisodes, episodesApi, setPosterUrl, s
         setPosterUrl(res.data.poster_path)
         setEpiLeght(res.data.episodes.length)
     } catch (error) {
-        console.log('Error in line 105 apiRequest', error)
+        console.log('Error in line 105 apiRequest')
     }
 }
 
@@ -182,7 +178,7 @@ const getMovieForRow = async (movieApi, setMovie) => {
         }
         setMovie(res.data.results)
     } catch (error) {
-        console.log('Error in line 116 apiRequest', error)
+        console.log('Error in line 116 apiRequest')
     }
 }
 
@@ -195,7 +191,7 @@ const getMovieForPoster = async (movieApi, setMovieDetail, setMovieTrailer, setG
         setMovieTrailer(res.data.videos.results[trailerindex])
         setGenres(res.data.genres.slice(0, 3))
     } catch (error) {
-        console.log('Error in line 126 apiRequest', error)
+        console.log('Error in line 126 apiRequest')
     }
 }
 
@@ -205,7 +201,7 @@ const GetAllGenres = async(setCategories, fecthGenresUrl) => {
         const res = await BaseMovieUrl.get(fecthGenresUrl)
         setCategories(res.data.genres)
     } catch (error) {
-        console.log("Error in line 140 apiRequest", error)
+        console.log("Error in line 140 apiRequest")
     }
 }
 
