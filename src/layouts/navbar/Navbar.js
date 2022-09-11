@@ -55,7 +55,6 @@ const Navbar = ({ location }) => {
         const arrowActive = document.querySelector('.dropdown-caret.active')
         dropdownMenuActive?.classList.remove('active')
         arrowActive?.classList.remove('active')
-        console.log('close')
     }
 
     const handleOpenDropMenu = (e) => {
@@ -64,7 +63,6 @@ const Navbar = ({ location }) => {
         const arrow = document.querySelector('.dropdown-caret')
         dropdownMenu.classList.add('active')
         arrow.classList.add('active')
-        console.log(123)
     }
 
     useEffect(() => {

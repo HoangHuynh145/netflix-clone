@@ -43,9 +43,10 @@
             padding-left: 3rem;
             margin-bottom: 0;
         }
-
+        
         @include mobile { 
             bottom: 1.5rem;
+            padding-left: 1.7rem;
         }
 
         .trailer-left_wrapper {
@@ -63,7 +64,7 @@
                     font-size: 4rem;
                 }
                 @include mobile {
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                 }
             }
 
@@ -91,6 +92,7 @@
                     margin-top: .5rem;
                     font-weight: 600;
                     line-height: 1;
+                    -webkit-line-clamp: 2;
                 }
             }
 
@@ -103,7 +105,7 @@
                 }
 
                 @include mobile {
-                    margin-top: 1rem;
+                    margin-top: .5rem;
                 }
 
                 .main-trailer-btn {

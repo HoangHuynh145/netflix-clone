@@ -7,24 +7,28 @@
     z-index: 1;
     padding: 0 6rem;
     top: 6.8rem;
-    height: 6.8rem;
+    height: max-content;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    
+
     &.active {
         position: fixed;
         top: 0;
         background-color: #000;
         transition: background-color .5s ease-in-out;
         z-index: 999;
+        height: 6.8rem;
     }
 
     @include tablet {
-        height: 4.1rem;
         top: 4.1rem;
         padding: 0 1.7rem;
+
+        &.active {
+            height: 4.1rem;
+        }
     }
 
     .genres-select-wrapper {
@@ -32,9 +36,14 @@
         gap: 4rem;
         align-items: center;
 
+        @include tablet {
+            gap: 2rem;
+        }
+
         .genres-select-title {
             color: #fff;
             font-size: 3.8rem;
+
             @include tablet {
                 font-size: 2.5rem;
             }
@@ -57,6 +66,11 @@
                 }
             }
 
+            @include tablet {
+                height: 2rem;
+                max-width: 9rem;
+            }
+
             .genres-select {
                 font-size: 1.4rem;
                 line-height: 2;
@@ -70,6 +84,12 @@
                 .genres-option {
                     background: #000;
                     color: #fff;
+                }
+
+                @include tablet {
+                    line-height: unset;
+                    padding-right: 3rem;
+                    padding-left: .5rem;
                 }
             }
 
@@ -94,6 +114,10 @@
         user-select: none;
         @include animate(fade, .55s, ease-in-out, .45);
 
+        @include tablet {
+            gap: 2rem;
+        }
+
         .location {
             font-size: 2rem;
             color: grey;
@@ -115,19 +139,23 @@
                 font-weight: 500;
                 font-size: 2.5rem;
                 cursor: context-menu;
+            }
 
+            @include tablet {
+                font-size: 1.5rem;
             }
         }
 
         .genres-name {
             font-size: 3.8rem;
             cursor: context-menu;
+
             @include tablet {
                 font-size: 2.5rem;
             }
 
             @include mobile {
-                font-size: 1.8rem;
+                font-size: 1.3rem;
             }
         }
     }
@@ -164,6 +192,11 @@
                 opacity: 1;
                 background: transparent;
             }
+
+            @include tablet {
+                width: 3.4rem;
+                height: 2rem;
+            }
         }
     }
 }
@@ -172,6 +205,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

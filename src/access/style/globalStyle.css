@@ -252,7 +252,7 @@ a {
 /* Mobile */
 @media (max-width: 450px) {
     .btn-option {
-        font-size: 1.6rem;
+        font-size: 1rem;
         padding: .5rem 1.1rem;
         white-space: nowrap;
     }

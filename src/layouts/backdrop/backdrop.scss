@@ -251,6 +251,7 @@
                 .info-left__above {
                     margin-bottom: 1.28rem;
                     display: flex;
+                    flex-wrap: wrap;
 
                     .trailer-left-item {
                         margin-right: 0.8rem;
@@ -320,6 +321,10 @@
         .backdrop-recommend-conrainer {
             margin: 4.8rem 0;
             padding: 0 4.5rem;
+
+            @include mobile {
+                padding: 0 2rem;
+            }
 
             .backdrop-recommend__title {
                 margin-bottom: 2rem;
@@ -656,6 +661,10 @@
             margin: 4.8rem 0 3.2rem 0;
             display: flex;
             flex-direction: column;
+
+            @include mobile {
+                padding: 0 2rem;
+            }
 
             .movie-name {
                 font-size: 2.4rem;

@@ -1,8 +1,13 @@
-import React from 'react'
+import video404 from '../../access/img/404Mp4.mp4';
+import "./notFound.scss"
 
 const NotFound = () => {
     return (
-        <h1 style={{color: 'pink'}} >Hé lô đây là trang khi mày nhấn linh tinh</h1>
+        <div className="not-found-container">
+            <video className="video" autoPlay muted loop >
+                <source src={video404}></source>
+            </video>
+        </div>
     )
 }
 

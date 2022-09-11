@@ -58,7 +58,7 @@ const Banner = ({ fetchBannerData, type }) => {
                 movie.genre_ids.includes(16) ? setLimitAge(13) : setLimitAge(16)
             }
         }
-    }, [movie.id])
+    }, [movie])
 
     // delay trailer play
     useEffect(() => {

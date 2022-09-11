@@ -224,20 +224,12 @@
                         padding: .7rem 3.6rem;
                         width: 100%;
                         height: 100%;
-
+                        
                         &::placeholder {
                             color: #dadada;
                         }
                     }
-
-                    @include mobile {
-                        width: 15rem;
-
-                        .input-search {
-                            padding-left: 3rem;
-                            padding-right: 2.5rem;
-                        }
-                    }
+                    
                 }
 
                 &__btn {
@@ -259,10 +251,6 @@
                         width: 100%;
                         height: 100%;
                     }
-
-                    @include mobile {
-                        width: 3rem;
-                    }
                 }
 
                 &__input {
@@ -280,16 +268,12 @@
                         &::placeholder {
                             color: transparent;
                             font-size: 1.4rem;
-
-                            @include mobile {
-                                font-size: 1rem;
-                            }
                         }
                     }
                 }
 
                 @include mobile {
-                    height: 2.5rem;
+                    display: none;
                 }
             }
 

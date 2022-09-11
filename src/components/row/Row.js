@@ -128,7 +128,7 @@ const Row = ({ id, title, location, fecthUrl, fectchGenres }) => {
     const hanldeTouchEnd = (e) => {
         const endPoint = Math.ceil(e.changedTouches[0].clientX)
         if (startPointRef.current - endPoint !== 0) {
-            if (startPointRef.current - endPoint > 5) {
+            if (startPointRef.current - endPoint > 30) {
                 hanldeMoveSlide('next')
             } else if (startPointRef.current - endPoint < -5) {
                 hanldeMoveSlide('prev')

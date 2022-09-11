@@ -54,7 +54,7 @@ const Poster = ({ movie, index, id, firstIndex, lastIndex, location, itemsPerScr
     const canculateLimitAge = (type) => {
         let adLimit = 0;
         let chLimit = 0;
-        movieDetail.genres.forEach(item => {
+        movieDetail?.genres.forEach(item => {
             if (item.id === 80 || item.id === 53) {
                 adLimit++;
                 return
