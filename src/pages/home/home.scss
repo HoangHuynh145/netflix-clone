@@ -1,0 +1,16 @@
+@import '../../access/style/variables';
+@import '../../access/style/mixins';
+
+.row-container{
+    position: relative;
+    padding-bottom: 5rem;
+    margin-top: -15rem;
+
+    @include tablet {
+        margin-top: -5rem;
+    }
+
+    @include mobile {
+        margin-top: -3.4rem;
+    }
+}

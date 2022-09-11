@@ -1,0 +1,33 @@
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.2rem;
+}
+
+@mixin animate($animation, $duration, $method, $times) {
+    animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name}{
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile-width) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: ($tablet-width)) {
+        @content;
+    }
+}
+
+@mixin both {
+    @media (max-width: $both-width){
+        @content;
+    }
+}

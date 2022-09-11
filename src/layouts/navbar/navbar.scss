@@ -1,0 +1,497 @@
+@import '../../access/style/variables';
+@import '../../access/style/mixins';
+
+.pinning-navbar {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .5) 100%);
+    color: #fff;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .5s linear;
+
+    @include tablet {
+        background: linear-gradient(180deg, rgba(0, 0, 0, .7) 10%, transparent);
+    }
+
+    &.hidden.active{
+        display: none;
+    }
+
+    &.active {
+        background-color: #000;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 6rem;
+        height: 6.8rem;
+
+        @include both {
+            padding: 0 3.8rem;
+        }
+
+        @include tablet {
+            padding: 0 3rem;
+            height: 4.1rem;
+        }
+
+        @include mobile {
+            padding: 0 1.7rem;
+        }
+
+        &-left {
+            display: flex;
+            align-items: center;
+
+            .navbar-left__logo {
+                width: 9.3rem;
+                height: 3rem;
+                margin-right: 2.5rem;
+
+                @include both {
+                    width: 9rem;
+                    height: 2.5rem;
+                    margin-right: unset;
+                }
+
+                @include tablet {
+                    width: 8rem;
+                    height: 2.2rem;
+                }
+
+                @include mobile {
+                    width: 5.3rem;
+                    height: 1.7rem;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .navbar-left__navigation {
+                display: flex;
+
+                @include tablet {
+                    display: none;
+                }
+
+                .navigation-tab {
+                    margin-left: 2rem;
+                    color: rgba(255, 255, 255, 0.6);
+                    font-weight: 400;
+
+                    &.active {
+                        color: #fff;
+                        font-weight: 600;
+                    }
+
+                    &__title {
+                        font-size: 1.5rem;
+                        cursor: pointer;
+
+                        @include both {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .dropdown-filter-container {
+                margin-left: 1.8rem;
+                font-size: 1.1rem;
+                font-weight: 600;
+                position: relative;
+                display: none;
+
+                @include tablet {
+                    display: unset;
+                }
+
+                @include mobile {
+                    font-size: 0.8rem;
+                    white-space: nowrap;
+                }
+
+                .filter-btn {
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        width: 2rem;
+                        height: 1.3rem;
+                        max-width: max-content;
+                        margin-left: 0.3rem;
+                    }
+                }
+
+                .filter-body {
+                    position: absolute;
+                    background-color: rgba(0, 0, 0, .9);
+                    top: 5rem;
+                    left: -10rem;
+                    display: none;
+
+                    &.active {
+                        display: unset;
+                    }
+
+                    @include mobile {
+                        left: -7rem;
+                        top: 4rem;
+                    }
+
+                    .filter-items-wrapper {
+                        position: relative;
+                        border-top: .3rem solid #e5e5e5;
+
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                            width: 2rem;
+                            height: 1rem;
+                            background-color: #e5e5e5;
+                            top: -4%;
+                            left: 50%;
+                            transform: translateX(-50%);
+
+                            @include mobile {
+                                left: 35%;
+                            }
+                        }
+
+                        .filter-item {
+                            width: 26rem;
+                            font-size: 1.3rem;
+                            height: 5rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        &-right {
+            display: flex;
+            align-items: center;
+
+            .nav-element {
+                margin-right: 1.5rem;
+
+                @include both {
+                    margin-right: 1rem;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+
+                @include tablet {
+                    margin-right: 1rem;
+                }
+
+                @include mobile {
+                    margin-right: 0;
+                }
+
+            }
+
+            .search-box {
+                position: relative;
+                height: 3.7rem;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                width: 3.6rem;
+                cursor: pointer;
+                transition: all .3s ease-out;
+
+                &.active {
+                    width: 27.3rem;
+                    border: 1px solid hsla(0, 0%, 100%, .85);
+                    background-color: rgba(0, 0, 0, 0.5);
+
+                    .input-search {
+                        padding: .7rem 3.6rem;
+                        width: 100%;
+                        height: 100%;
+
+                        &::placeholder {
+                            color: #dadada;
+                        }
+                    }
+
+                    @include mobile {
+                        width: 15rem;
+
+                        .input-search {
+                            padding-left: 3rem;
+                            padding-right: 2.5rem;
+                        }
+                    }
+                }
+
+                &__btn {
+                    position: absolute;
+                    width: 3.6rem;
+                    height: 2.4rem;
+                    padding: 0 .6rem;
+
+                    &.search {
+                        left: 0;
+                    }
+
+                    &.close {
+                        right: 0;
+                        visibility: hidden;
+                    }
+
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    @include mobile {
+                        width: 3rem;
+                    }
+                }
+
+                &__input {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+
+                    .input-search {
+                        color: #fff;
+                        width: 0;
+                        height: 0;
+                        background: transparent;
+                        font-size: 1.4rem;
+
+                        &::placeholder {
+                            color: transparent;
+                            font-size: 1.4rem;
+
+                            @include mobile {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+
+                @include mobile {
+                    height: 2.5rem;
+                }
+            }
+
+            .kids-zone {
+                font-size: 1.5rem;
+                font-weight: 500;
+
+                @include both {
+                    display: none;
+                }
+            }
+
+            .notifications {
+                width: 1.8rem;
+                height: 1.8rem;
+                margin: .2rem 2.1rem .3rem .6rem;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                @include tablet {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    margin: unset;
+                    margin-right: 2rem;
+                    margin-left: .7rem;
+                }
+
+                @include mobile {
+                    width: 1.4rem;
+                }
+                
+            }
+
+            .account-menu {
+                position: relative;
+
+                .account-menu__dropdown-btn {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+
+                    .account-avatar {
+                        width: 3.2rem;
+                        height: 3.2rem;
+                        border-radius: .5rem;
+                        overflow: hidden;
+
+                        @include mobile {
+                            width: 2.8rem;
+                            height: 2.8rem;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .dropdown-caret {
+                        margin-left: 0.5rem;
+                        width: 1.5rem;
+                        height: 2.5rem;
+                        transition: .3s ease;
+
+                        @include tablet {
+                            display: none;
+                        }
+
+                        &.active {
+                            transform: rotate(180deg);
+                        }
+
+                        svg {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .dropdown-menu {
+                    position: absolute;
+                    background-color: rgba($color: #000, $alpha: .8);
+                    width: 19rem;
+                    right: 0;
+                    top: 5rem;
+                    display: flex;
+                    flex-direction: column;
+                    border: .1rem solid hsla(0, 0%, 100%, .15);
+                    opacity: 0;
+                    transition: opacity .6s ease-in-out;
+                    visibility: hidden;
+
+                    &.active {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 1.6rem;
+                        height: .9rem;
+                        background-color: red;
+                        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                        right: 13%;
+                        top: -1.2rem;
+                        transform: translate(-13%);
+                        cursor: pointer;
+
+                        @include tablet {
+                            right: 0;
+                        }
+
+                        @include mobile {
+                            right: 0;
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        width: 28%;
+                        height: 21%;
+                        background-color: transparent;
+                        position: absolute;
+                        right: -0.1rem;
+                        top: -21%;
+                        cursor: pointer;
+
+                        @include both {
+                            display: none;
+                        }
+                    }
+
+                    .dropdown-menu-list {
+                        padding: 1rem;
+
+                        &.profile {
+                            padding-top: 1.5rem;
+                        }
+
+                        &.submenu {
+                            border-top: .1rem solid hsla(0, 0%, 100%, .25);
+                            border-bottom: .1rem solid hsla(0, 0%, 100%, .25);
+                        }
+
+                        .profile__kids-zone {
+                            display: flex;
+                            align-items: center;
+
+                            .pic-kid-zone {
+                                width: 3.2rem;
+                                height: 3.2rem;
+                                border-radius: .3rem;
+                                margin-right: 1rem;
+                                overflow: hidden;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                        }
+
+                        .sub-menu-list {
+                            padding: .5rem 0;
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+
+                            &.logout-container {
+                                justify-content: center;
+                            }
+
+                            .dropdown-menu-list__title {
+                                font-size: 1.3rem;
+                                font-weight: 500;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            .dropdown-menu-list__icon {
+                                width: 2.5rem;
+                                height: 2.5rem;
+                                margin-right: 1.3rem;
+                                margin-left: 0.5rem;
+
+                                svg {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import './mixins';
+
+$--slider-padding: 6rem;
+$--slider-padding-both: 4rem;
+$--img-gap-both: .19rem;
+$--img-gap: .3rem;
+
+// responsive
+$both-width: 991px;
+$tablet-width: 769px;
+$mobile-width: 450px;

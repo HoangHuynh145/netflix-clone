@@ -1,0 +1,173 @@
+@import '../../access/style/mixins';
+@import '../../access/style/variables';
+
+.movie-poster {
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+    }
+
+    .movie-preview-modal {
+        position: absolute;
+        width: 125%;
+        top: -55%;
+        left: -12.5%;
+        background-color: #181818;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: .5rem;
+        box-shadow: rgb(0 0 0 / 75%) 0px 3px 10px;
+        @include animate(zoom-in, .2s, linear, 1);
+
+        @include both{
+            display: none;
+        }
+
+        &.first-item {
+            left: 0;
+        }
+
+        &.last-item {
+            left: unset;
+            right: 0;
+        }
+
+        .preview-modal__above {
+            position: relative;
+            
+            .preview-poster {
+                border-radius: unset;
+                position: relative;
+                max-height: 19.898rem;
+            }
+
+            .preview-ytb {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                }
+
+                .emmbed-youtube {
+                    height: 100%;
+                    overflow: hidden;
+
+                    .ytb-video {
+                        width: 100%;
+                        height: 100%;
+                        transform: scale(1.6);
+                    }
+                }
+            }
+        }
+
+        .preview-modal__desc {
+            padding: 1.6rem;
+
+            .desc-above {
+                display: flex;
+                justify-content: flex-start;
+
+                .btn-controll {
+                    background-color: rgba(255, 255, 255, .1);
+                    margin: .4rem;
+                }
+
+                .trailer__emotions {
+
+                    &:hover .show-all-emotions {
+                        @include animate(showAllEmotion, .4s, linear, .8);
+
+                        .btn-controll {
+                            background-color: transparent;
+                        }
+                    }
+                }
+
+                .backdrop-btn {
+                    margin-left: auto;
+                }
+            }
+
+            .desc-under {
+                color: #fff;
+                font-size: 1.6rem;
+
+                .above-movie {
+                    margin: 1.28rem 0;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    .limit-age {
+                        margin: 0 .8rem;
+                    }
+                }
+
+                .genres-wrapper {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 0.8rem;
+
+                    .genres {
+                        padding-right: .76rem;
+                        display: flex;
+
+                        &:first-child .fake-dot::after {
+                            display: none;
+                        }
+
+                        .fake-dot{
+                            display: flex;
+                            align-items: center;
+                            &::after {
+                                content: "\22C5";
+                                font-size: 3.5rem;
+                                color: #646464;
+                                line-height: 0;
+                                font-weight: bolder;
+                                padding-right: .76rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include keyframes(zoom-in) {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@include keyframes(showAllEmotion) {
+    from {
+        opacity: 0;
+        width: 0;
+    }
+
+    to {
+        opacity: 1;
+        width: 14.9rem;
+    }
+}

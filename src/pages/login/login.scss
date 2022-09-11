@@ -1,0 +1,232 @@
+@import '../../access/style/variables';
+@import '../../access/style/mixins';
+
+
+.login {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .login__background {
+        position: absolute;
+        background: url('../../access/img/login_bg.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+
+        @include mobile {
+            background: #000;
+        }
+    }
+
+    .login__gradient {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, .5) 100%);
+        z-index: -1;
+    }
+
+    .login-header {
+        height: 9rem;
+        display: flex;
+        align-items: center;
+        margin-left: 3%;
+
+        @include mobile {
+            height: 8rem;
+        }
+
+        .login-header__logo {
+            width: 16.7rem;
+            height: 4.5rem;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .form-body {
+        max-width: 61rem;
+        margin: 0 auto;
+        padding: 0 5%;
+        min-height: 100vh;
+
+        @include mobile {
+            min-height: unset;
+            border-bottom: .1rem solid #737373;
+            padding-bottom: 2rem;
+        }
+        
+        .form-body__wrapper {
+            padding: 6rem 6.8rem 4rem 6.8rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            min-height: 66rem;
+            border-radius: .4rem;
+            max-width: 45rem;
+
+            @include both{
+                margin-bottom: 9rem;
+            }
+
+            @include mobile {
+                margin-bottom: unset;
+                padding: unset;
+                padding-top: 2rem;
+                min-height: 50rem;
+            }
+
+            .form-body__wrapper-main {
+                margin-bottom: 5rem;
+
+                .wrapper-main__title {
+                    font-size: 3.5rem;
+                    margin-bottom: 2.8rem;
+                    font-weight: 600;
+                }
+
+                .wrapper-main__error{
+                    margin-bottom: 1.6rem;
+                    background-color: #e87c03;
+                    font-size: 1.4rem;
+                    padding: 1rem 2rem;
+                    border-radius: .4rem;
+                    strong{
+                        font-weight: 600;
+                    }
+                    a{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+
+                .wrapper-main__form {
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+
+                    .form-input {
+                        padding: 1.6rem 2rem 0 1.6rem;
+                        background-color: #333;
+                        font-size: 1.6rem;
+                        color: #fff;
+                        border-radius: .4rem;
+                        height: 5rem;
+                        margin-bottom: 1.6rem;
+                        &.error{
+                            border-bottom: .2rem solid #e87c03;
+                        }
+                    }
+
+                    .form-title {
+                        position: absolute;
+                        color: #999;
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        left: 8%;
+                        transform: translateX(-8%);
+                        transition: all .2s ease-out;
+
+                        &.email {
+                            top: 1.5rem;
+                            @include mobile{
+                                top: 1.5rem;
+                            }
+                            &.focus {
+                                font-size: 1.1rem;
+                                color: #8c8c8c;
+                                top: 0.5rem;
+                            }
+                        }
+
+                        &.password {
+                            top: 8rem;
+                            @include mobile{
+                                top: 8rem;
+                            }
+                            &.focus {
+                                top: 7rem;
+                                font-size: 1.1rem;
+                                color: #8c8c8c;
+                            }
+                        }
+                    }
+
+                    .form-submit {
+                        padding: 1.6rem;
+                        margin-top: 2.4rem;
+                        margin-bottom: 1.2rem;
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        border-radius: .4rem;
+                    }
+
+                    .form-help {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        font-size: 1.4rem;
+                        color: #b3b3b3;
+
+                        #form-help__remember {
+                            width: 1.6rem;
+                            height: 1.6rem;
+                            margin-right: .5rem;
+                            accent-color: red;
+                            cursor: pointer;
+                        }
+
+                        .form-help__remember-title {
+                            flex: 1;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+
+            .login-body__wrapper-other {
+                .login__body-signup {
+                    color: #737373;
+                    font-size: 1.55rem;
+                    font-weight: 500;
+            
+                    .signup-link {
+                        color: #fff;
+                        font-size: 1.6rem;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .login__body-reCapcha {
+                    margin: 1.3rem 0;
+                    font-size: 1.3rem;
+
+                    .reCapcha-title {
+                        display: inline;
+                        margin-right: 0.3rem;
+                        color: #8c8c8c;
+                        font-weight: 500;
+                    }
+
+                    .reCapcha-link {
+                        color: #0071Eb;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .login__footer{
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}

@@ -1,0 +1,407 @@
+@import '../../access/style/variables';
+@import '../../access/style/mixins';
+
+.story-container {
+
+    @include mobile {
+        min-width: 100vw;
+    }
+
+    .story-header-wrapper {
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 5.6rem 0 5.6rem;
+        height: 4.9rem;
+        position: relative;
+
+        @include tablet {
+            margin: 1.5rem 4.5rem 0 4.5rem;
+        }
+
+        @include mobile {
+            margin: 2rem 5% 0 5%;
+        }
+
+        .story-logo {
+            width: 16.7rem;
+            height: 4.5rem;
+
+            @include both {
+                width: 13.3rem;
+                height: 3.6rem;
+            }
+
+            @include tablet {
+                width: 10.8rem;
+                height: 3.2rem;
+            }
+
+            @include mobile {
+                width: 8.9rem;
+                height: 2.4rem;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .story-options {
+            display: flex;
+            align-items: center;
+
+            .select-language-wrapper {
+                position: relative;
+                margin-right: 3.2rem;
+
+                @include tablet {
+                    margin-right: 1.5rem;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background: url("../../access/img/language-globe.svg") no-repeat;
+                    width: 2rem;
+                    height: 1.5rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    margin: 0 .5rem;
+                    vertical-align: middle;
+
+                    @include mobile {
+                        width: 1.2rem;
+                        top: 53%;
+                        transform: translateY(-53%);
+                    }
+                }
+
+                .language-select {
+                    padding: .8rem 2.2rem;
+                    background-color: transparent;
+                    -webkit-appearance: none;
+                    border: .1rem solid #fff;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    color: #fff;
+                    border-radius: .5rem;
+                    cursor: pointer;
+
+                    @include mobile {
+                        padding: 0.4rem 2rem;
+                    }
+
+                    option {
+                        background: #b4b4b4;
+                        font-weight: 600;
+                        font-size: 1.4rem;
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    background: url("../../access/img/arrow-down.svg") no-repeat;
+                    position: absolute;
+                    width: 1rem;
+                    height: 1.5rem;
+                    top: 47%;
+                    right: 4%;
+                    transform: translate(-4%, -47%);
+                }
+
+            }
+
+            .selector-login {
+                padding: .9rem 1.7rem;
+                font-size: 1.6rem;
+                border-radius: .5rem;
+                font-weight: 500;
+                cursor: pointer;
+
+                @include mobile {
+                    padding: .4rem .8rem;
+                }
+            }
+        }
+    }
+
+    .story-cards {
+        .story-card {
+            position: relative;
+            border-bottom: .8rem solid #222;
+            padding: 8rem 4.5rem;
+            background-color: #000;
+
+            @include tablet {
+                padding: 6.5rem 4.5rem;
+            }
+
+            @include mobile {
+                padding: 5rem 5%;
+            }
+
+            &.hero-card {
+                background-color: transparent;
+                height: 100vh;
+
+                @include tablet {
+                    height: auto;
+                }
+            }
+
+            .story-card-background {
+                position: absolute;
+                top: -8rem;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: -1;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                .background-gradient {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(0, 0, 0, .3);
+                    background-image: linear-gradient(0deg, transparent 50%, rgba(0, 0, 0, .7)), radial-gradient(50% 100%, transparent 0, rgba(0, 0, 0, .7) 100%);
+                }
+            }
+
+            .story-card-text {
+                margin: 0 auto;
+                max-width: 95rem;
+                padding: 7.5rem 0;
+                text-align: center;
+                color: #fff;
+
+                @include mobile {
+                    padding: 3rem 0;
+                }
+
+                .story-card-subtitle {
+                    margin: 1.6rem 7.5rem;
+                    font-size: 2.6rem;
+                    font-weight: 500;
+
+                    @include both {
+                        font-size: 2.4rem;
+                        font-weight: 600;
+                    }
+
+                    @include mobile {
+                        margin: 1.6rem 0;
+                        font-size: 1.8rem;
+                        font-weight: 500;
+                    }
+                }
+
+                .email-form-title {
+                    padding-top: 1.4rem;
+                    padding-bottom: 2rem;
+                    font-size: 1.9rem;
+                    font-weight: 500;
+
+                    @include both {
+                        font-size: 1.8rem;
+                        font-weight: 400;
+                    }
+
+                    @include tablet {
+                        font-size: 2.3rem;
+                        font-weight: 500;
+                        max-width: 50rem;
+                        margin: 0 auto;
+                    }
+
+                    @include mobile {
+                        padding: 0 10%;
+                        font-size: 1.9rem;
+                    }
+                }
+
+            }
+
+            .story-card-input {
+                max-width: 75rem;
+                height: 7rem;
+                display: flex;
+                justify-content: center;
+                margin: 0 auto;
+
+                @include both {
+                    max-width: 60rem;
+                    height: 6rem;
+                }
+
+                @include tablet {
+                    flex-direction: column;
+                    height: 10rem;
+                    max-width: 50rem;
+                }
+
+                @include mobile {
+                    margin-top: 2rem;
+                }
+
+                .card-input {
+                    flex: 1;
+                    height: 100%;
+                    padding: 1rem 1rem 0 1rem;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+
+                    @include tablet {
+                        min-height: 5.5rem;
+                        margin-bottom: 1rem;
+                        border-radius: .5rem;
+                    }
+                }
+
+                .btn-card-input {
+                    height: 100%;
+                    padding: 0 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    font-size: 2.3rem;
+
+                    @include tablet {
+                        padding: 0 1.6rem;
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        min-height: 4rem;
+                        margin: 0 auto;
+                        border-radius: 0.5rem;
+                    }
+                }
+            }
+        }
+
+        .card-title {
+            font-size: 4.8rem;
+            font-weight: 600;
+            line-height: 1;
+            max-width: 80rem;
+            margin: 0 auto;
+            color: #fff;
+
+            @include both {
+                max-width: 60rem;
+                font-size: 4.8rem;
+            }
+
+            @include tablet {
+                width: 100%;
+                font-size: 3.4rem;
+            }
+
+            @include mobile {
+                font-size: 2.6rem;
+            }
+
+            .hero-card {
+                font-size: 6.3rem;
+            }
+        }
+
+        .faq-card {
+            background-color: #000;
+            color: #fff;
+
+            .faq-card-container {
+                text-align: center;
+
+                .faq-list {
+                    max-width: 81.5rem;
+                    margin: 5.2rem auto;
+
+                    .faq-list-item {
+                        margin-bottom: 0.8rem;
+
+                        .faq-question {
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 2.1rem 3.1rem;
+                            font-size: 2.7rem;
+                            background-color: #303030;
+                            color: #fff;
+                            margin-bottom: 0.1rem;
+                            font-weight: 500;
+
+                            @include tablet {
+                                font-size: 2rem;
+                            }
+
+                            @include mobile {
+                                font-size: 1.6rem;
+                                padding: 1.4rem 2.1rem;
+                                text-align: start;
+                            }
+
+                            svg {
+                                width: 3rem;
+                                height: 3rem;
+                                cursor: pointer;
+                                transition: all .3s ease;
+
+                                @include tablet {
+                                    width: 2.3rem;
+                                    height: 2.3rem;
+                                }
+
+                                @include mobile {
+                                    width: 2rem;
+                                    height: 2rem;
+                                }
+                            }
+
+                            &.rotate svg {
+                                transform: rotate(225deg)
+                            }
+                        }
+
+                        .faq-answer {
+                            background-color: #303030;
+                            width: 100%;
+                            overflow: hidden;
+                            font-size: 2.5rem;
+                            font-weight: 500;
+                            height: 0;
+                            text-align: start;
+
+                            @include tablet {
+                                font-size: 2rem;
+                            }
+
+                            @include mobile {
+                                font-size: 1.8rem;
+                            }
+
+                            &.open {
+                                padding: 3.12rem;
+                                height: auto;
+
+                                @include mobile {
+                                    padding: 2.1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

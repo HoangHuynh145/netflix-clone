@@ -1,0 +1,235 @@
+@import '../../access/style/variables';
+@import '../../access/style/mixins';
+
+.animation-card {
+    background-color: #000 !important;
+    color: #fff;
+
+    .animation-card-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 110rem;
+        margin: 0 auto;
+
+        &.left {
+            flex-flow: row-reverse;
+
+            @include tablet {
+                flex-direction: column;
+            }
+        }
+
+        @include tablet {
+            flex-direction: column;
+        }
+
+        .animation-card-text {
+            flex: 1;
+            max-width: 52%;
+            padding-right: 4.8rem;
+            z-index: 2;
+
+            @include tablet {
+                width: 100%;
+                max-width: unset;
+                text-align: center;
+                padding-right: unset;
+            }
+
+            .card-subtitle {
+                font-size: 2.6rem;
+                margin-top: 2rem;
+                margin-bottom: 0.7rem;
+                font-weight: 500;
+
+                @include tablet {
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                }
+            }
+
+            .download-route {
+                margin: 2rem 0;
+                padding: .8rem 0;
+                font-size: 2.6rem;
+                display: inline-block;
+
+                @include tablet {
+                    font-size: 2rem;
+                    font-weight: 400;
+                    letter-spacing: -0.1rem;
+                    margin: 1rem 0px;
+                }
+
+                svg {
+                    margin-left: 1rem;
+                    vertical-align: middle;
+
+                    @include tablet {
+                        margin-left: 0.8rem;
+                        vertical-align: middle;
+                        width: 1.8rem;
+                    }
+                }
+
+                &:hover {
+                    opacity: .9;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .animation-card-img-container {
+            position: relative;
+
+            width: 50.5rem;
+            height: 37.8rem;
+
+            &.margin-minus {
+                margin: -7% 0 -4% -13%;
+
+                @include both {
+                    margin: -4% 0 -4% -6%;
+                }
+
+                @include tablet {
+                    margin: unset;
+                }
+            }
+
+            @include both {
+                width: 41rem;
+                height: 30.6rem;
+            }
+
+            @include tablet {
+                width: 60rem;
+                height: 45rem;
+            }
+
+            @include mobile {
+                width: 33.7rem;
+                height: 25.3rem;
+            }
+
+            .card-img {
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            .animation-card-video {
+                position: absolute;
+                height: auto;
+                width: 85.3%;
+                display: flex;
+                left: 49.8%;
+                top: 47%;
+                transform: translate(-50%, -48%);
+                z-index: 1;
+
+                .card-video {
+                    width: 100%;
+                    height: auto;
+                    object-fit: fill;
+                }
+
+                .story-card-wrapper {
+
+                    &.boxshot {
+                        background: #000;
+                        width: 100%;
+                        position: absolute;
+                        top: 7rem;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        padding: .8rem 1.2rem;
+                        border: .2rem solid hsla(0, 0%, 100%, .25);
+                        border-radius: .5rem;
+
+                        @include tablet {
+                            width: 75%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            top: 12rem;
+                            border-radius: 1.5rem;
+                        }
+
+                        @include mobile {
+                            padding: 0.56rem 1.2rem;
+                            top: 8rem;
+                        }
+                    }
+
+                    @include both {
+                        border-radius: 1.5rem;
+                    }
+
+                    .story-card-image {
+                        width: 5.7rem;
+                        height: 8.4rem;
+                        margin-right: 1.6rem;
+
+                        @include both {
+                            width: 5.1rem;
+                            height: 7.2rem;
+                        }
+
+                        @include mobile {
+                            width: 3.4rem;
+                            height: 4.8rem;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .story-card-text-wrapper {
+                        display: flex;
+                        flex-direction: column;
+                        flex: 1;
+
+                        .boxshot-name {
+                            font-size: 1.6rem;
+                            font-weight: 600;
+                            @include mobile {
+                                font-size: 1.4rem;
+                            }
+                        }
+
+                        .downloading {
+                            font-size: 1.44rem;
+                            color: #0071eb;
+                            font-weight: 600;
+                            @include mobile {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+
+                    .story-card-custom {
+                        width: 4.8rem;
+                        height: 6rem;
+                        float: right;
+
+                        @include mobile {
+                            height: 4.8rem;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+    }
+}
