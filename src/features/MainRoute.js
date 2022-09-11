@@ -26,13 +26,13 @@ const MainRoute = () => {
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/register' element={<RegisterPage />} />
                 <Route path='/home' element={
-                    user ? <HomePage title="Trang chủ - Netflix" /> : <NotFound />
+                    user ? <HomePage title="Home - Netflix" /> : <NotFound />
                 } />
                 <Route path='tvShow' element={
-                    user ? <TvSeries title="Phim T.hình - Netflix" /> : <NotFound />
+                    user ? <TvSeries title="TV Show - Netflix" /> : <NotFound />
                 } />
                 <Route path='movies' element={
-                    user ? <Movies title="Phim - Netflix" /> : <NotFound />
+                    user ? <Movies title="Movies - Netflix" /> : <NotFound />
                 } />
                 <Route path='latest' element={
                     user ? <Latest title="Netflix" /> : NotFound
